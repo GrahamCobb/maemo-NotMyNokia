@@ -1,0 +1,10 @@
+description	"Disable MyNokia auto-registration"
+author		"Graham Cobb"
+
+start on USER
+stop on starting shutdown
+start on ACT_DEAD
+
+console none
+exec /usr/sbin/NotMyNokia.sh
+
