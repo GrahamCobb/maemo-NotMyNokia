@@ -3,12 +3,30 @@ notmynokia for Maemo
 
 This program attempts to stop the MyNokia registration program running.
 
-Why
----
+Why?
+----
+In the Maemo5 PR1.2 update, Nokia included a feature to automatically
+register users with their MyNokia service.  However, they did not allow 
+an opt-out so everyone who installs PR1.2 has their details sent to
+Nokia in an SMS message whether they want it or not (Nokia have not said
+exactly what details, as at the time of writing).
 
+Although users can unsubscribe after the installation is completed, Nokia
+make no promises to remove their data, nor do they refund any costs and
+it is possible that the some courts may consider that the legal agreement
+they presented during the process was in some way binding on the user.
 
-How
----
+So, some users prefer that this registration does not happen in the first
+place.  That is the purpose of this package.
+
+This is, of course, completely optional.  By installing this package
+you are making an explicit statement that you do not want your personal
+information sent to the MyNokia service.  You can change your mind at any
+time just be removing the package -- the MyNokia registration will then run
+on the next reboot.
+
+How?
+----
 The package currently takes the following actions:
 
 1) Create a file called .USER_DOES_NOT_WANT_MYNOKIA in the user home
@@ -43,6 +61,6 @@ for a possible workround in this case.
 Undoing
 -------
 All the actions are reversed when the package is uninstalled so if you decide
-you want to try MyNokia just remove this package.
+you want to try MyNokia just remove this package (after upgrading to PR 1.2).
 
  -- Graham Cobb <g+770@cobb.uk.net>, 23 Jun 2010
