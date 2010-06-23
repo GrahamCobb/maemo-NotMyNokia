@@ -1,0 +1,19 @@
+Source: notmynokia
+Section: user/system
+Priority: optional
+Maintainer: Graham Cobb <g+770@cobb.uk.net>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: notmynokia
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Prevent MyNokia registration
+ Disables the running of Nokia's MyNokia registration tool.
+ .
+ Only install this package if you do not want to register 
+ with MyNokia.
+ .
+ Removing this package will re-enable the MyNokia registration
+ tool at the next boot.
+

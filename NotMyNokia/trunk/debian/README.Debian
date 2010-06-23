@@ -1,0 +1,48 @@
+notmynokia for Maemo
+--------------------
+
+This program attempts to stop the MyNokia registration program running.
+
+Why
+---
+
+
+How
+---
+The package currently takes the following actions:
+
+1) Create a file called .USER_DOES_NOT_WANT_MYNOKIA in the user home
+directory.  This currently  has no effect but it is a clear and
+unambiguous statement, which future MyNokia programs could be taught
+to honour.
+
+2) Create a file called .cherry_state in the user home directory.  This
+causes Nokia's version of /etc/X11/Xsession.d/34cherry to not run cherry
+and, according to the comments in that file, also causes cherry to take
+no action if it gets run somehow.
+
+3) Replace /etc/X11/Xsession.d/34cherry with an empty script.
+
+4) Replace /usr/bin/cherry with an empty script.
+
+These actions are taken on every boot, well before cherry is started.
+The effect should be that the user is protected from the MyNokia registration
+even if cherry is re-installed, as long as this package is still installed.
+
+On a re-flash, the protection of the .cherry_state file should work
+but this package should be re-installed as soon as possible.
+
+If both the software and the eMMC is re-flashed then this package offers
+no protection until it is installed.  You should reboot with no SIM card in
+place and re-install this package as soon as possible.  However, it is 
+believed that in this case, the registration SMS may already be on the
+system, waiting to be sent as soon as the SIM card is inserted. See
+http://forums.internettablettalk.com/showpost.php?p=716574&postcount=212
+for a possible workround in this case.
+
+Undoing
+-------
+All the actions are reversed when the package is uninstalled so if you decide
+you want to try MyNokia just remove this package.
+
+ -- Graham Cobb <g+770@cobb.uk.net>, 23 Jun 2010
