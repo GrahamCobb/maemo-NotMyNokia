@@ -62,10 +62,11 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/dbus-scripts.
-	mkdir -p $(CURDIR)/debian/etc/event.d
-	cp notmynokia $(CURDIR)/debian/etc/event.d/
-	mkdir -p $(CURDIR)/debian/usr/sbin
-	cp NotMyNokia.sh $(CURDIR)/debian/usr/sbin
+	mkdir -p $(CURDIR)/debian/tmp/etc/event.d
+	cp notmynokia $(CURDIR)/debian/tmp/etc/event.d/
+	chmod +x $(CURDIR)/debian/tmp/etc/event.d/notmynokia
+	mkdir -p $(CURDIR)/debian/tmp/usr/sbin
+	cp NotMyNokia.sh $(CURDIR)/debian/tmp/usr/sbin
 
 # Build architecture-dependent files here.
 binary-arch: build install
@@ -77,7 +78,7 @@ binary-indep: build install
 	dh_installchangelogs 
 	dh_installdocs
 #	dh_installexamples
-	dh_install
+	dh_install --sourcedir=debian/tmp
 #	dh_installmenu
 #	dh_installdebconf	
 #	dh_installlogrotate
