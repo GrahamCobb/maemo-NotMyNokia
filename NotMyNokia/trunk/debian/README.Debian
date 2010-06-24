@@ -29,7 +29,7 @@ How?
 ----
 The package currently takes the following actions:
 
-1) Create a file called .USER_DOES_NOT_WANT_MYNOKIA in the user home
+1) Create a file called .user_does_not_want_mynokia in the user home
 directory.  This currently  has no effect but it is a clear and
 unambiguous statement, which future MyNokia programs could be taught
 to honour.
@@ -62,5 +62,9 @@ Undoing
 -------
 All the actions are reversed when the package is uninstalled so if you decide
 you want to try MyNokia just remove this package (after upgrading to PR 1.2).
+
+More information
+----------------
+See http://wiki.maemo.org/PR1.2_compulsory_My_Nokia_subscription
 
  -- Graham Cobb <g+770@cobb.uk.net>, 23 Jun 2010

@@ -8,11 +8,11 @@ then
 #
 
 # Set the user choice marker
-if [ ! -f /home/user/.USER_DOES_NOT_WANT_MYNOKIA ]
+if [ ! -f /home/user/.user_does_not_want_mynokia ]
 then
-    echo $name >/home/user/.USER_DOES_NOT_WANT_MYNOKIA
-    logger -t $name Creating /home/user/.USER_DOES_NOT_WANT_MYNOKIA
-    echo $name Creating /home/user/.USER_DOES_NOT_WANT_MYNOKIA
+    echo $name >/home/user/.user_does_not_want_mynokia
+    logger -t $name Creating /home/user/.user_does_not_want_mynokia
+    echo $name Creating /home/user/.user_does_not_want_mynokia
 fi
 
 # Set the marker that cherry and /etc/X11/Xsession.d/34cherry
@@ -58,13 +58,13 @@ else
 # Undo disabling MyNokia auto-registration
 
 # Clear the user choice marker
-if [ -f /home/user/.USER_DOES_NOT_WANT_MYNOKIA ]
+if [ -f /home/user/.user_does_not_want_mynokia ]
 then
-    state=`cat /home/user/.USER_DOES_NOT_WANT_MYNOKIA`
+    state=`cat /home/user/.user_does_not_want_mynokia`
     if [ "$state" != "$name" ]; then rem="(not created by $name)"; else rem=""; fi
-    rm /home/user/.USER_DOES_NOT_WANT_MYNOKIA
-    logger -t $name "Undo: Removing /home/user/.USER_DOES_NOT_WANT_MYNOKIA $rem"
-    echo $name "Undo: Removing /home/user/.USER_DOES_NOT_WANT_MYNOKIA $rem"
+    rm /home/user/.user_does_not_want_mynokia
+    logger -t $name "Undo: Removing /home/user/.user_does_not_want_mynokia $rem"
+    echo $name "Undo: Removing /home/user/.user_does_not_want_mynokia $rem"
 fi
 
 # Clear the marker that cherry and /etc/X11/Xsession.d/34cherry
